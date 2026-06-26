@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        ENV: development
+    ports:
+      - "5173:80"
+    environment:
+      - VITE_API_URL=https://dev.api.example.com

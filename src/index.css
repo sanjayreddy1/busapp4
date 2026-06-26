@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+
+@keyframes tick-stroke {
+  0% {
+    stroke-dashoffset: 100;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.tick-animate {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: tick-stroke 0.5s ease forwards;
+}
+
+/* Celebrate Burst Animation */
+@keyframes celebrate-burst {
+  0% {
+    transform: scale(0.4) rotate(0deg);
+    opacity: 0.8;
+  }
+
+  60% {
+    transform: scale(1.4) rotate(25deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+.celebrate-burst {
+  animation: celebrate-burst 0.8s ease-out forwards;
+}
+
+/* Floating confetti small bits */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(60px) rotate(120deg);
+    opacity: 0;
+  }
+}
+
+.confetti-piece {
+  animation: confetti-fall 1s linear forwards;
+} 
+@layer base {
+  :root {
+    --background: 220 25% 98%;
+    --foreground: 220 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 220 15% 15%;
+
+    --accent: 280 60% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 220 15% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 210 100% 50%;
+
+    --radius: 0.75rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 50%) 0%, hsl(240 100% 60%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%) 0%, hsl(240 100% 60%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(280 60% 55%) 0%, hsl(300 60% 65%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 76% 46%) 100%);
+    
+    --shadow-glow: 0 0 40px hsl(210 100% 50% / 0.15);
+    --shadow-card: 0 10px 30px -10px hsl(210 100% 50% / 0.08);
+    --shadow-hover: 0 20px 50px -15px hsl(210 100% 50% / 0.2);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    /* @apply border-border; */
+
+  }
+
+  body {
+    /* @apply bg-background text-foreground; */
+  }
+}
